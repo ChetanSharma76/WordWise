@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WordWise - Word Frequency Counter</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Dark Mode Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+    </script>
+    <!-- Google Fonts Icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+        <!-- Heading with Tailwind Styling -->
+        <h1 class="text-4xl font-bold text-center mb-6 text-blue-600 dark:text-blue-400">
+            WordWise
+        </h1>
+        <!-- Dark Mode Toggle Icon -->
+        <div class="flex justify-end mb-4">
+            <span id="themeIcon" class="material-symbols-outlined cursor-pointer text-3xl">dark_mode</span>
+        </div>
+        <!-- Form for URL and Top N Words Input -->
+        <form id="urlForm" class="flex flex-col sm:flex-row gap-4 mb-6">
+            <input type="text" id="urlInput" placeholder="Enter URL" required class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200">
+            <input type="number" id="nInput" placeholder="Top N words" min="1" required class="w-32 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-200">
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200 dark:bg-blue-500 dark:hover:bg-blue-600">
+                Analyze
+            </button>
+        </form>
+        <!-- Table for Displaying Results -->
+        <table class="min-w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <thead class="bg-blue-100 dark:bg-gray-700">
+                <tr>
+                    <th class="py-3 px-4 text-center">Word</th>
+                    <th class="py-3 px-4 text-center">Frequency</th>
+                </tr>
+            </thead>
+            <tbody id="resultBody" class="divide-y divide-gray-200 dark:divide-gray-700 text-center"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
